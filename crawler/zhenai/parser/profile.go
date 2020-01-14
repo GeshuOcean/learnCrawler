@@ -7,7 +7,9 @@ import (
 	"regexp"
 	"strconv"
 )
-
+/**
+解析个人页面数据，获取年龄，是否结婚等数据
+ */
 var ageRe = regexp.MustCompile(`<div class="m-btn purple" data-v-8b1eac0c>([\d]+)岁</div>`)
 var marriageRe = regexp.MustCompile(`<div class="m-btn purple" data-v-8b1eac0c>([^<]+婚)</div>`)
 
@@ -21,6 +23,7 @@ func ParseProfile(contents []byte,name string) engine.ParseResult {
 
 	profile.Marriage = extraceString(contents,marriageRe)
 
+	//不再深度遍历解析了，只返回数据
 	result := engine.ParseResult{
 		Items:[]interface{}{profile},
 	}

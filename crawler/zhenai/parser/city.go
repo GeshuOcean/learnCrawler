@@ -5,7 +5,9 @@ import (
 	"learnCrawler/crawler/engine"
 	"regexp"
 )
-
+/**
+解析城市，获取用户个人信息url
+ */
 const cityRe = `<a href="(http://album.zhenai.com/u/[0-9]+)"[^>]*>([^<]+)</a>`
 
 func ParseCity(contents []byte) engine.ParseResult {

@@ -24,6 +24,7 @@ func Fetch(url string) ([]byte, error) {
 	}
 
 	bodyRead:=bufio.NewReader(resp.Body)
+	//识别响应的编码
 	e := determinEncoding(bodyRead)
 	//utf8Reader := transform.NewReader(resp.Body, simplifiedchinese.GBK.NewDecoder())
 	utf8Reader := transform.NewReader(bodyRead, e.NewDecoder())
@@ -32,6 +33,7 @@ func Fetch(url string) ([]byte, error) {
 }
 
 
+//判断返回响应的编码，默认UTF8
 func determinEncoding(r *bufio.Reader) encoding.Encoding {
 	bytes, err := r.Peek(1024)
 	if err != nil {

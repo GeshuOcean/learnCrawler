@@ -6,8 +6,8 @@ type Request struct {
 }
 
 type ParseResult struct {
-	Request [] Request
-	Items   []interface{}
+	Request [] Request	//新的请求
+	Items   []interface{} //解析的数据
 }
 
 func Nilparser([]byte) ParseResult {
