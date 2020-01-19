@@ -33,14 +33,18 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 		e.Scheduler.Submit(r)
 	}
 
-
 	for {
 		result := <-out
 		for _, item := range result.Items {
-			go func() {e.ItemChan <- item}()
+			go func() {
+				e.ItemChan <- item
+			}()
 		}
 
 		for _, request := range result.Request {
+			if isDuplicate(request.Url){
+				continue
+			}
 			e.Scheduler.Submit(request)
 		}
 	}

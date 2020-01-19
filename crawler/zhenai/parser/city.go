@@ -26,7 +26,6 @@ func ParseCity(contents []byte) engine.ParseResult {
 			ParserFunc: func(c []byte) engine.ParseResult {
 				return ParseProfile(c, name)
 			}})
-		fmt.Printf("User: %s ,URL: %s ", m[2], m[1])
 		limit--
 		if limit <= 0 {
 			break

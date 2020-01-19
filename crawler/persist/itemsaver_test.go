@@ -1,6 +1,9 @@
 package persist
 
 import (
+	"context"
+	"encoding/json"
+	"github.com/olivere/elastic"
 	"learnCrawler/crawler/model"
 	"testing"
 )
@@ -22,5 +25,25 @@ func TestItemServer(t *testing.T) {
 		Car:        "已购车",
 	}
 
-	save(expected)
+	id, err := save(expected)
+	if err != nil {
+		panic(err)
+	}
+
+	//TODO Try to start up elastic search
+	client, err := elastic.NewClient(elastic.SetSniff(false))
+	if err != nil {
+		panic(err)
+	}
+
+	resp, err := client.Get().Index("dating_profile").Type("zhenai").Id(id).Do(context.Background())
+	if err != nil {
+		panic(err)
+	}
+	t.Logf("%s", resp.Source)
+	var actual model.Profile
+	json.Unmarshal(*resp.Source, &actual)
+	if actual!=expected{
+
+	}
 }
