@@ -2,7 +2,7 @@ package model
 
 type Profile struct {
 	Name       string
-	gemder     string
+	Gender     string
 	Age        int
 	Height     int
 	Weight     int
@@ -10,7 +10,7 @@ type Profile struct {
 	Marriage   string
 	Education  string
 	Occupation string
-	Hukou      string
+	Hokou      string
 	Xinzuo     string
 	House      string
 	Car        string

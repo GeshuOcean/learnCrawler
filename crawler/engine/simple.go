@@ -18,12 +18,12 @@ func (e SimpleEngine) Run(seeds ...Request) {
 		r := requests[0]
 		requests = requests[1:]
 
-		parseResult,err := e.worker(r)
+		parseResult,err := worker(r)
 		if err != nil {
 			continue
 		}
 
-		//解析出来的新请求添加到队列，并打印爬取的数据
+		//解析出来的新请求添加到任务队列，并打印爬取的数据
 		requests = append(requests, parseResult.Request...)
 		for _, item := range parseResult.Items {
 			log.Printf("Goe iten %s", item)
@@ -32,7 +32,7 @@ func (e SimpleEngine) Run(seeds ...Request) {
 }
 
 //请求url拉取数据	Fetch比较耗时
-func (e SimpleEngine) worker(r Request) (ParseResult, error) {
+func  worker(r Request) (ParseResult, error) {
 	log.Printf("Fetching %s", r.Url)
 	body, err := fetcher.Fetch(r.Url)
 	if err != nil {
@@ -42,3 +42,5 @@ func (e SimpleEngine) worker(r Request) (ParseResult, error) {
 	//调用Request中方法解析url请求结果中所需数据
 	return r.ParserFunc(body),nil
 }
+
+
