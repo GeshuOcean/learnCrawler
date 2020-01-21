@@ -20,6 +20,12 @@ func ParseCityList(contents []byte) engine.ParseResult {
 	limit := 10
 	for _, m := range matches {
 		//新request添加到本次解析要返回结果中的Request队列中
+		//result.Items = append(result.Items, engine.Item{
+		//	Url:     "",
+		//	Type:    "",
+		//	Id:      "",
+		//	Payload: nil,
+		//})
 		result.Request = append(result.Request, engine.Request{
 			Url:        string(m[1]),
 			ParserFunc: ParseCity,

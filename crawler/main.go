@@ -8,10 +8,15 @@ import (
 )
 
 func main() {
+	itemChan,err:=persist.ItemServer()
+	if err != nil {
+		panic(err)
+	}
+
 	e := engine.ConcurrentEngine{
 		Scheduler:   &scheduler.QueuedScheduler{},
 		WorkerCount: 10,
-		ItemChan:    persist.ItemServer(),
+		ItemChan:   itemChan ,
 	}
 
 	e.Run(

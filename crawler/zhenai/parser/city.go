@@ -8,7 +8,7 @@ import (
 
 /**
 解析城市，获取用户个人信息url
- */
+*/
 var (
 	profileRe = regexp.MustCompile(`<a href="(http://album.zhenai.com/u/[0-9]+)"[^>]*>([^<]+)</a>`)
 	cityUrlRe = regexp.MustCompile(`(href="http://www.zhenai.com/zhenghun/shanhai/[^"]+)"`)
@@ -21,10 +21,11 @@ func ParseCity(contents []byte) engine.ParseResult {
 	limit := 3
 	for _, m := range matches {
 		name := string(m[2])
+		//result.Items = append(result.Items, "User "+name)
 		result.Request = append(result.Request, engine.Request{
 			Url: string(m[1]),
 			ParserFunc: func(c []byte) engine.ParseResult {
-				return ParseProfile(c, name)
+				return ParseProfile(c, name, string(m[1]))
 			}})
 		limit--
 		if limit <= 0 {
