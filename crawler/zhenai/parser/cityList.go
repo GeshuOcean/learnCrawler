@@ -11,7 +11,7 @@ import (
 const cityListRe = `href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)" [^>]*>([^<]+)</a>`
 
 //城市列表解析出城市数据交给城市解析器
-func ParseCityList(contents []byte) engine.ParseResult {
+func ParseCityList(contents []byte,url string) engine.ParseResult {
 	//正则
 	re := regexp.MustCompile(cityListRe)
 	matches := re.FindAllSubmatch(contents, -1)

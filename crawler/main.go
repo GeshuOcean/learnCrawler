@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	itemChan,err:=persist.ItemServer()
+	itemChan,err:=persist.ItemServer("dating_profile")
 	if err != nil {
 		panic(err)
 	}

@@ -31,13 +31,14 @@ func TestItemServer(t *testing.T) {
 		},
 	}
 
-	err := save(expected)
-	if err != nil {
-		panic(err)
-	}
 
 	//TODO Try to start up elastic search
 	client, err := elastic.NewClient(elastic.SetSniff(false))
+	if err != nil {
+		panic(err)
+	}
+	const index = "dating_test"
+	err = save(client,index,expected)
 	if err != nil {
 		panic(err)
 	}

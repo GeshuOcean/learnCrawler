@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="344174a4-7ce4-45fb-a016-9c539ef64a03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/crawler/engine/worker.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/concurrent.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/engine/simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/simple.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/engine/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/types.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/model/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/model/profile.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/persist/itemsaver.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/persist/itemsaver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/zhenai/parser/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/zhenai/parser/city.go" afterDir="false" />
@@ -115,7 +115,8 @@
       <workItem from="1579398305331" duration="5994000" />
       <workItem from="1579405184384" duration="22273000" />
       <workItem from="1579442669352" duration="2063000" />
-      <workItem from="1579500894437" duration="5542000" />
+      <workItem from="1579500894437" duration="6981000" />
+      <workItem from="1579616979674" duration="691000" />
     </task>
     <servers />
   </component>
@@ -141,22 +142,22 @@
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
     <state x="560" y="194" key="#GOROOT/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579442701195" />
-    <state width="1878" height="229" key="GridCell.Tab.0.bottom" timestamp="1579605971539">
+    <state width="1878" height="229" key="GridCell.Tab.0.bottom" timestamp="1579619316288">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.bottom/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579605971539" />
-    <state width="1878" height="229" key="GridCell.Tab.0.center" timestamp="1579605971538">
+    <state width="1878" height="229" key="GridCell.Tab.0.bottom/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316288" />
+    <state width="1878" height="229" key="GridCell.Tab.0.center" timestamp="1579619316286">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.center/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579605971538" />
-    <state width="1878" height="229" key="GridCell.Tab.0.left" timestamp="1579605971537">
+    <state width="1878" height="229" key="GridCell.Tab.0.center/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316286" />
+    <state width="1878" height="229" key="GridCell.Tab.0.left" timestamp="1579619316285">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.left/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579605971537" />
-    <state width="1878" height="229" key="GridCell.Tab.0.right" timestamp="1579605971539">
+    <state width="1878" height="229" key="GridCell.Tab.0.left/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316285" />
+    <state width="1878" height="229" key="GridCell.Tab.0.right" timestamp="1579619316287">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.right/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579605971539" />
+    <state width="1878" height="229" key="GridCell.Tab.0.right/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316287" />
     <state width="1878" height="330" key="GridCell.Tab.1.bottom" timestamp="1579452939678">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
@@ -173,10 +174,10 @@
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
     <state width="1878" height="330" key="GridCell.Tab.1.right/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579452939678" />
-    <state x="639" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1579500963330">
+    <state x="639" y="361" key="com.intellij.ide.util.TipDialog" timestamp="1579617008362">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state x="639" y="361" key="com.intellij.ide.util.TipDialog/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579500963330" />
+    <state x="639" y="361" key="com.intellij.ide.util.TipDialog/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579617008362" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
