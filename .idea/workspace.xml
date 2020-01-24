@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="344174a4-7ce4-45fb-a016-9c539ef64a03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/crawler/engine/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/persist/client/itemsaver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/persist/rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/persist/server/client_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/persist/server/itemsaver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/rpcsupport/rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/worker/client/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/worker/rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/worker/server/client_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/worker/server/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_distributed/worker/types.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/concurrent.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/engine/simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/simple.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/engine/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/engine/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/engine/worker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/fetcher/fetcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/fetcher/fetcher.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/persist/itemsaver.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/persist/itemsaver.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/persist/itemsaver_test.go" afterDir="false" />
@@ -21,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Go Application" />
         <option value="Go File" />
       </list>
     </option>
@@ -55,7 +70,21 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/crawler_distributed/persist" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build learnCrawler/crawler_distributed/persist/server">
+    <configuration name="go build learnCrawler/crawler_distributed/persist/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="learnCrawler" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/crawler_distributed/persist/server/itemsaver.go" />
+      <package value="learnCrawler/crawler_distributed/persist/server" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learnCrawler" />
       <working_directory value="$PROJECT_DIR$" />
@@ -78,6 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build learnCrawler/crawler_distributed/persist/server" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestItemServer in learnCrawler/crawler/persist" />
       </list>
@@ -116,7 +146,7 @@
       <workItem from="1579405184384" duration="22273000" />
       <workItem from="1579442669352" duration="2063000" />
       <workItem from="1579500894437" duration="6981000" />
-      <workItem from="1579616979674" duration="691000" />
+      <workItem from="1579616979674" duration="15515000" />
     </task>
     <servers />
   </component>
@@ -142,22 +172,22 @@
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
     <state x="560" y="194" key="#GOROOT/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579442701195" />
-    <state width="1878" height="229" key="GridCell.Tab.0.bottom" timestamp="1579619316288">
+    <state width="1878" height="229" key="GridCell.Tab.0.bottom" timestamp="1579791132872">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.bottom/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316288" />
-    <state width="1878" height="229" key="GridCell.Tab.0.center" timestamp="1579619316286">
+    <state width="1878" height="229" key="GridCell.Tab.0.bottom/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579791132872" />
+    <state width="1878" height="229" key="GridCell.Tab.0.center" timestamp="1579791132871">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.center/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316286" />
-    <state width="1878" height="229" key="GridCell.Tab.0.left" timestamp="1579619316285">
+    <state width="1878" height="229" key="GridCell.Tab.0.center/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579791132871" />
+    <state width="1878" height="229" key="GridCell.Tab.0.left" timestamp="1579791132870">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.left/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316285" />
-    <state width="1878" height="229" key="GridCell.Tab.0.right" timestamp="1579619316287">
+    <state width="1878" height="229" key="GridCell.Tab.0.left/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579791132870" />
+    <state width="1878" height="229" key="GridCell.Tab.0.right" timestamp="1579791132872">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
-    <state width="1878" height="229" key="GridCell.Tab.0.right/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579619316287" />
+    <state width="1878" height="229" key="GridCell.Tab.0.right/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579791132872" />
     <state width="1878" height="330" key="GridCell.Tab.1.bottom" timestamp="1579452939678">
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
@@ -178,16 +208,5 @@
       <screen x="0" y="23" width="1920" height="1012" />
     </state>
     <state x="639" y="361" key="com.intellij.ide.util.TipDialog/-1280.89.1280.777/0.23.1920.1012@0.23.1920.1012" timestamp="1579617008362" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/crawler/engine/concurrent.go</url>
-          <line>39</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

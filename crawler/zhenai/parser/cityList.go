@@ -4,6 +4,7 @@ import (
 	"learnCrawler/crawler/engine"
 	"regexp"
 )
+
 /**
 解析获取城市列表
 */
@@ -11,7 +12,7 @@ import (
 const cityListRe = `href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)" [^>]*>([^<]+)</a>`
 
 //城市列表解析出城市数据交给城市解析器
-func ParseCityList(contents []byte,url string) engine.ParseResult {
+func ParseCityList(contents []byte, url string) engine.ParseResult {
 	//正则
 	re := regexp.MustCompile(cityListRe)
 	matches := re.FindAllSubmatch(contents, -1)
@@ -26,9 +27,9 @@ func ParseCityList(contents []byte,url string) engine.ParseResult {
 		//	Id:      "",
 		//	Payload: nil,
 		//})
-		result.Request = append(result.Request, engine.Request{
-			Url:        string(m[1]),
-			ParserFunc: ParseCity,
+		result.Requests = append(result.Requests, engine.Request{
+			Url:    string(m[1]),
+			Parser: engine.NewFuncParser(ParseCity, "ParseCity"),
 		})
 		limit--
 		if limit <= 0 {

@@ -6,7 +6,7 @@ import (
 )
 
 //请求url拉取数据	Fetch比较耗时
-func worker(r Request) (ParseResult, error) {
+func Worker(r Request) (ParseResult, error) {
 	log.Printf("Fetching %s", r.Url)
 	body, err := fetcher.Fetch(r.Url)
 	if err != nil {
@@ -14,5 +14,5 @@ func worker(r Request) (ParseResult, error) {
 		return ParseResult{}, err
 	}
 	//调用Request中方法解析url请求结果中所需数据
-	return r.ParserFunc(body, r.Url), nil
+	return r.Parser.Parse(body, r.Url), nil
 }

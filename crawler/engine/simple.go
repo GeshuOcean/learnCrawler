@@ -17,13 +17,13 @@ func (e SimpleEngine) Run(seeds ...Request) {
 		r := requests[0]
 		requests = requests[1:]
 
-		parseResult,err := worker(r)
+		parseResult,err := Worker(r)
 		if err != nil {
 			continue
 		}
 
 		//解析出来的新请求添加到任务队列，并打印爬取的数据
-		requests = append(requests, parseResult.Request...)
+		requests = append(requests, parseResult.Requests...)
 		for _, item := range parseResult.Items {
 			log.Printf("Goe iten %s", item)
 		}

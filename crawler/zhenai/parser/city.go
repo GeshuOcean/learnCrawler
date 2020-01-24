@@ -3,6 +3,7 @@ package parser
 import (
 	"fmt"
 	"learnCrawler/crawler/engine"
+	"learnCrawler/crawler_distributed/config"
 	"regexp"
 )
 
@@ -21,9 +22,9 @@ func ParseCity(contents []byte,url string) engine.ParseResult {
 	limit := 3
 	for _, m := range matches {
 		//result.Items = append(result.Items, "User "+name)
-		result.Request = append(result.Request, engine.Request{
+		result.Requests = append(result.Requests, engine.Request{
 			Url:        string(m[1]),
-			ParserFunc: ProfileParser(string(m[2])),
+			Parser: NewProfileParser(string(m[2])),
 		})
 		limit--
 		if limit <= 0 {
@@ -34,9 +35,9 @@ func ParseCity(contents []byte,url string) engine.ParseResult {
 
 	matches = cityUrlRe.FindAllSubmatch(contents, -1)
 	for _, m := range matches {
-		result.Request = append(result.Request, engine.Request{
+		result.Requests = append(result.Requests, engine.Request{
 			Url:        string(m[1]),
-			ParserFunc: ParseCity,
+			Parser: engine.NewFuncParser(ParseCity,config.ParseCity),
 		})
 	}
 
